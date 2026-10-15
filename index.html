@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b2b">
+  <meta name="description" content="Wishing you a bright, beautiful, and joyful New Year. Happy New Year 2027!">
+  <title>Happy New Year 2027!</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #100b2b;
+      --gold: #ffd978;
+      --cream: #fff8e8;
+      --pink: #ff82bb;
+      --mint: #8ff5d2;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-width: 320px; background: var(--night); }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      overflow: hidden;
+      color: var(--cream);
+      font-family: ui-rounded, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 92%, rgb(91 42 145 / 44%), transparent 48%),
+        radial-gradient(ellipse at 12% 20%, rgb(49 51 121 / 30%), transparent 40%),
+        linear-gradient(155deg, #100b2b 10%, #1b1040 57%, #281044);
+    }
+
+    .scene {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      min-height: 100svh;
+      place-items: center;
+      isolation: isolate;
+      padding: 2rem 1.25rem;
+    }
+
+    .scene::before,
+    .scene::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .scene::before {
+      opacity: .42;
+      background-image:
+        radial-gradient(1px 1px at 8% 18%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 19% 77%, #ffe6a3 99%, transparent),
+        radial-gradient(1px 1px at 29% 37%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 42% 12%, #f7baff 99%, transparent),
+        radial-gradient(1px 1px at 58% 82%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 71% 23%, #b6f8ff 99%, transparent),
+        radial-gradient(1px 1px at 83% 61%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 94% 34%, #ffe6a3 99%, transparent);
+      background-size: 370px 310px;
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+
+    .scene::after {
+      inset: auto 0 0;
+      height: 29%;
+      background: linear-gradient(transparent, rgb(255 116 174 / 8%));
+    }
+
+    #fireworks {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .content {
+      width: min(100%, 760px);
+      text-align: center;
+      animation: arrive 1.1s cubic-bezier(.2, .75, .25, 1) both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      margin: 0 0 1rem;
+      color: var(--mint);
+      font-size: clamp(.7rem, 2vw, .82rem);
+      font-weight: 750;
+      letter-spacing: .29em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      width: 22px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: .72;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 8.2vw, 6.35rem);
+      font-weight: 850;
+      letter-spacing: -.065em;
+      line-height: .98;
+      text-wrap: balance;
+      text-shadow: 0 5px 42px rgb(255 134 187 / 24%);
+    }
+
+    h1 span {
+      display: block;
+      margin-top: .08em;
+      color: var(--gold);
+      font-size: clamp(5.5rem, 22vw, 13rem);
+      letter-spacing: -.085em;
+      line-height: .96;
+      background: linear-gradient(180deg, #fff6c9 5%, #ffd978 42%, #ffab76 88%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 8px 27px rgb(255 181 87 / 20%));
+    }
+
+    .message {
+      max-width: 470px;
+      margin: 1.6rem auto 0;
+      color: rgb(255 248 232 / 78%);
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      line-height: 1.75;
+      text-wrap: balance;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      margin-top: 2rem;
+      padding: .9rem 1.55rem;
+      border: 1px solid rgb(255 255 255 / 35%);
+      border-radius: 999px;
+      color: #25143b;
+      background: linear-gradient(135deg, #fff0b2, #ffd16f 55%, #ffb37e);
+      box-shadow: 0 8px 30px rgb(255 188 104 / 24%), inset 0 1px rgb(255 255 255 / 70%);
+      cursor: pointer;
+      font: inherit;
+      font-size: .95rem;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 38px rgb(255 188 104 / 35%), inset 0 1px rgb(255 255 255 / 70%);
+    }
+
+    .button:active { transform: translateY(0) scale(.98); }
+    .button:focus-visible { outline: 3px solid white; outline-offset: 5px; }
+
+    .button .icon {
+      font-size: 1.1rem;
+      transition: transform .3s ease;
+    }
+
+    .button:hover .icon { transform: rotate(24deg) scale(1.2); }
+
+    .footer-note {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+      margin: 0;
+      color: rgb(255 248 232 / 42%);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      position: absolute;
+      color: var(--gold);
+      pointer-events: none;
+      animation: sparkle 3s ease-in-out infinite;
+    }
+
+    .spark-one { top: 18%; left: 17%; font-size: 1.7rem; }
+    .spark-two { top: 25%; right: 17%; color: var(--pink); font-size: 1.3rem; animation-delay: .9s; }
+    .spark-three { right: 21%; bottom: 23%; color: var(--mint); font-size: 1.15rem; animation-delay: 1.5s; }
+    .spark-four { bottom: 28%; left: 18%; font-size: 1rem; animation-delay: .4s; }
+
+    @keyframes twinkle {
+      from { opacity: .24; transform: translateY(0); }
+      to { opacity: .55; transform: translateY(-5px); }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: .4; transform: scale(.72) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.2) rotate(35deg); }
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(18px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 520px) {
+      .scene { padding: 1.5rem 1.1rem 3rem; }
+      .message { margin-top: 1.2rem; }
+      .button { margin-top: 1.5rem; }
+      .spark-one { top: 12%; left: 8%; }
+      .spark-two { top: 17%; right: 8%; }
+      .spark-three { right: 9%; bottom: 18%; }
+      .spark-four { bottom: 20%; left: 9%; }
+      .footer-note { font-size: .62rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="scene">
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+    <span class="spark spark-one" aria-hidden="true">✦</span>
+    <span class="spark spark-two" aria-hidden="true">✧</span>
+    <span class="spark spark-three" aria-hidden="true">✦</span>
+    <span class="spark spark-four" aria-hidden="true">✧</span>
+
+    <section class="content" aria-labelledby="greeting">
+      <p class="eyebrow">A little celebration for you</p>
+      <h1 id="greeting">Happy New Year<span>2027</span></h1>
+      <p class="message">May the year ahead bring you fresh beginnings, joyful moments, and wonderful things to celebrate. Thank you for being part of our journey!</p>
+      <button class="button" id="celebrate" type="button">
+        <span class="icon" aria-hidden="true">✦</span>
+        Celebrate with us
+      </button>
+    </section>
+
+    <p class="footer-note">Wishing you joy, today and all year long</p>
+  </main>
+
+  <script>
+    (() => {
+      const canvas = document.querySelector("#fireworks");
+      const context = canvas.getContext("2d");
+      const button = document.querySelector("#celebrate");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const colors = ["#ffd978", "#ff82bb", "#8ff5d2", "#a6a3ff", "#fff8e8"];
+      const particles = [];
+      let width = 0;
+      let height = 0;
+      let animationFrame = 0;
+      let lastBurst = 0;
+
+      function resizeCanvas() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.round(width * ratio);
+        canvas.height = Math.round(height * ratio);
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      }
+
+      function burst(x, y, count = 58) {
+        for (let i = 0; i < count; i += 1) {
+          const angle = (Math.PI * 2 * i) / count + Math.random() * .12;
+          const speed = 1.2 + Math.random() * 4;
+          particles.push({
+            x, y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            life: 48 + Math.random() * 35,
+            size: 1.4 + Math.random() * 2.3,
+            color: colors[Math.floor(Math.random() * colors.length)]
+          });
+        }
+        if (!animationFrame) animationFrame = requestAnimationFrame(draw);
+      }
+
+      function draw() {
+        context.clearRect(0, 0, width, height);
+        for (let i = particles.length - 1; i >= 0; i -= 1) {
+          const particle = particles[i];
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          particle.vy += .035;
+          particle.vx *= .99;
+          particle.life -= 1;
+
+          if (particle.life <= 0) {
+            particles.splice(i, 1);
+            continue;
+          }
+
+          context.globalAlpha = Math.min(1, particle.life / 24);
+          context.fillStyle = particle.color;
+          context.beginPath();
+          context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          context.fill();
+        }
+        context.globalAlpha = 1;
+        animationFrame = particles.length ? requestAnimationFrame(draw) : 0;
+      }
+
+      function celebrate() {
+        const x = width * (.2 + Math.random() * .6);
+        const y = height * (.16 + Math.random() * .42);
+        burst(x, y, 90);
+        window.setTimeout(() => burst(width * (.2 + Math.random() * .6), height * (.18 + Math.random() * .38), 65), 180);
+        window.setTimeout(() => burst(width * (.2 + Math.random() * .6), height * (.18 + Math.random() * .38), 65), 360);
+      }
+
+      function ambientFirework(now) {
+        if (!reducedMotion.matches && now - lastBurst > 1500 + Math.random() * 1300) {
+          lastBurst = now;
+          burst(width * (.12 + Math.random() * .76), height * (.12 + Math.random() * .45), 38);
+        }
+        window.setTimeout(() => requestAnimationFrame(ambientFirework), 400);
+      }
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      button.addEventListener("click", celebrate);
+      if (!reducedMotion.matches) requestAnimationFrame(ambientFirework);
+    })();
+  </script>
+</body>
+</html>
